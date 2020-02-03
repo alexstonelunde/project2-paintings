@@ -27,20 +27,38 @@ nav, .main {
 .contentElement {
     width: 33.333%;
     float: left;
-    background-color: cornflowerblue;
     overflow: auto;
+    padding: 10px 10px 10px 10px;
+    margin: 0 auto;
 }
 
 .contentElementPicture {
-      float: left;
-      width: 100%;
-      background-color: lightcoral;
-      height: 200px;
-  }
+    float: left;
+    width: 100%;
+    height: 50%;
+    background-image: url('../assets/cezanne-apples.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
 
 .contentElementText {
     float: left;
     width: 100%;
     background-color: lightgrey;
     height: 200px;
+    margin-top: 10px;
+}
+
+.textTitle {
+    text-align: center;
+    padding: 0 25px 0 25px;
+}
+
+.contentElement .category {
+    font-weight: bold;
+}
+
+.contentElement .author {
+    font-style: italic;
 }
