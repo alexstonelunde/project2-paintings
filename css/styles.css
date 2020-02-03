@@ -1,10 +1,46 @@
 * {
     box-sizing: border-box;
 }
+body {
+    margin: 0;
+}
 
-nav {
-    width: 1200px;
-    background-color: red;
+nav, .main {
+    width: 1500px;
     overflow: auto;
     margin: 0 auto;
+}
+
+.navContainer, .contentContainer {
+    float: left;
+    overflow: auto;
+    width: 100%;
+}
+
+.navElement {
+    width: 33.333%;
+    float: left;
+    background-color: darkseagreen;
+    height: 50px;
+}
+
+.contentElement {
+    width: 33.333%;
+    float: left;
+    background-color: cornflowerblue;
+    overflow: auto;
+}
+
+.contentElementPicture {
+      float: left;
+      width: 100%;
+      background-color: lightcoral;
+      height: 200px;
+  }
+
+.contentElementText {
+    float: left;
+    width: 100%;
+    background-color: lightgrey;
+    height: 200px;
 }
