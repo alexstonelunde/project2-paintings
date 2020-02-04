@@ -51,7 +51,27 @@
             </div>
 
             <div class="contentElement">
-                <div class="contentElementPicture">
+                <div class="contentElementPicture2">
+                    <img src="temp/cezanne-wife.png" />
+                </div>
+
+                <div class="contentElementText">
+                    description
+                </div>
+            </div>
+
+            <div class="contentElement">
+                <div class="contentElementPicture2">
+                    <img src="temp/cezanne-apples.png" />
+                </div>
+
+                <div class="contentElementText">
+                    description
+                </div>
+            </div>
+
+            <div class="contentElement">
+                <div class="contentElementPicture2">
 
                 </div>
 
@@ -61,7 +81,16 @@
             </div>
 
             <div class="contentElement">
-                <div class="contentElementPicture">
+                <div class="contentElementPicture2">
+                </div>
+
+                <div class="contentElementText">
+                    description
+                </div>
+            </div>
+
+            <div class="contentElement">
+                <div class="contentElementPicture2">
 
                 </div>
 

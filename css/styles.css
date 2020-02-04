@@ -28,18 +28,30 @@ nav, .main {
     width: 33.333%;
     float: left;
     overflow: auto;
-    padding: 10px 10px 10px 10px;
     margin: 0 auto;
 }
 
 .contentElementPicture {
+     float: left;
+     width: 100%;
+     height: 500px;
+     background-image: url('../temp/bg.png');
+     background-size: contain;
+     background-repeat: no-repeat;
+     margin: 0 auto;
+ }
+
+.contentElementPicture2 {
     float: left;
     width: 100%;
-    height: 50%;
-    background-image: url('../assets/cezanne-apples.jpg');
+    height: 500px;
+    margin: 0 auto;
+    background-image: url('../temp/bg.png');
     background-size: contain;
     background-repeat: no-repeat;
-    margin: 0 auto;
+}
+
+.contentElement {
 }
 
 .contentElementText {
@@ -47,7 +59,6 @@ nav, .main {
     width: 100%;
     background-color: lightgrey;
     height: 200px;
-    margin-top: 10px;
 }
 
 .textTitle {
