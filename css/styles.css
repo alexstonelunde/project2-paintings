@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 body {
-    margin: 0;
     font-family: Baskerville, serif;
     font-size: 18px;
 }
@@ -88,11 +87,8 @@ img {
  }*/
 
 .contentElementPicture2 {
-    float: left;
     width: 500px;
     height: 500px;
-    margin: 0 auto;
-    padding: 0 0 0 0;
     /*background-image: url('../temp/manet-family.png');
     background-size: contain;
     background-repeat: no-repeat;*/
@@ -170,5 +166,46 @@ img {
 
     .navElementTitle, .navElement {
         height: 35px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+
+    body {
+        font-size: 14px;
+    }
+    nav, .main {
+        width: 350px;
+    }
+
+    .contentElementPicture2 {
+        height: 350px;
+        width: 350px;
+    }
+
+    .contentElement {
+        width: 100%;
+    }
+
+    .navSpacer {
+        display: none;
+    }
+
+    .navElement {
+        width: 50%;
+    }
+
+    .navElementItem {
+        padding-top: 8px;
+    }
+
+    .navElementTitle {
+        width: 100%;
+        padding: 0 15px;
+        height: 40px;
+    }
+
+    .navElement {
+        height: 30px;
     }
 }

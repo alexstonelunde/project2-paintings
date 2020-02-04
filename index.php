@@ -50,17 +50,11 @@
                         <span class="category">A bowl of fruit</span>, by <span class="author">Paul Cezanne.</span>
                     </div>
                     <ul>
-                        <li>
-                            <span class="category">Date:</span> ca. 1896.
-                        </li>
+                        <li><span class="category">Date:</span> ca. 1896.</li>
 
-                        <li>
-                            <span class="category">Medium:</span> Oil on canvas.
-                        </li>
+                        <li><span class="category">Medium:</span> Oil on canvas.</li>
 
-                        <li>
-                            <span class="category">Movement:</span> Post-impressionism.
-                        </li>
+                        <li><span class="category">Movement:</span> Post-impressionism.</li>
                     </ul>
                 </div>
             </div>
@@ -114,7 +108,6 @@
                     description
                 </div>
             </div>
-
     </section>
 </body>
 </html>
