@@ -16,7 +16,7 @@ function drawContentElement(array $paintings): string
         $estDate = $painting['paintingCreationYearIsEstimate'] == 1?' ca. ':'';
 
         $displayCode .= '<div class="contentElement">'
-            . '<div class="contentElementPicture2">'
+            . '<div class="contentElementPicture">'
             . '<img src="' . $painting['paintingImageLink'] . '" />'
             . '</div>'
             . '<div class="contentElementText">'
