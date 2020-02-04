@@ -89,6 +89,7 @@ img {
 .contentElementPicture2 {
     width: 500px;
     height: 500px;
+    padding: 0 15px;
     /*background-image: url('../temp/manet-family.png');
     background-size: contain;
     background-repeat: no-repeat;*/
@@ -97,14 +98,13 @@ img {
 .contentElementText {
     float: left;
     width: 100%;
-    background-color: white;
-    height: 150px;
-    padding: 15px 30px 10px 30px;
+    height: 180px;
+    padding: 15px 30px 20px 30px;
 }
 
 .textTitle {
     text-align: center;
-    padding: 0 25px 0 25px;
+    padding: 10px 25px 0 25px;
 }
 
 .contentElement .category {
