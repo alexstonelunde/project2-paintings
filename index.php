@@ -2,6 +2,14 @@
 
 require('functions.php');
 
+$db = new PDO('mysql:host=db; dbname=project2-paintings', 'root', 'password');
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+$query = $db->prepare("SELECT `paintingName`, `authorFirstName`, `authorSecondName`, `paintingCreationYear`, `paintingCreationYearIsEstimate`, `paintingMedium`, `paintingImageLink`, `paintingHeight`, `paintingWidth`, `isHidden` FROM `Paintings`;");
+$query->execute();
+
+$paintings = $query->fetchAll();
+
 ?>
 
 <html lang="en">
