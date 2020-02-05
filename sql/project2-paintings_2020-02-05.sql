@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.29)
 # Database: project2-paintings
-# Generation Time: 2020-02-05 15:35:26 +0000
+# Generation Time: 2020-02-05 16:14:47 +0000
 # ************************************************************
 
 
@@ -20,32 +20,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-# Dump of table Paintings
+# Dump of table paintings
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `Paintings`;
+DROP TABLE IF EXISTS `paintings`;
 
-CREATE TABLE `Paintings` (
+CREATE TABLE `paintings` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `paintingName` varchar(150) DEFAULT NULL,
-  `authorFirstName` varchar(25) DEFAULT NULL,
-  `authorSecondName` varchar(25) DEFAULT NULL,
-  `paintingCreationYear` int(4) unsigned DEFAULT NULL,
-  `paintingMedium` varchar(60) DEFAULT NULL,
-  `paintingImageLink` varchar(500) DEFAULT NULL,
-  `paintingDescription` varchar(1000) DEFAULT NULL,
-  `paintingCreationYearIsEstimate` tinyint(1) unsigned DEFAULT NULL,
-  `paintingHeight` float unsigned DEFAULT NULL,
-  `paintingWidth` float unsigned DEFAULT NULL,
-  `metAssetLink` varchar(500) DEFAULT NULL,
-  `isHidden` tinyint(1) unsigned DEFAULT '0',
+  `paintingName` varchar(150) NOT NULL DEFAULT '',
+  `authorFirstName` varchar(25) NOT NULL DEFAULT '',
+  `authorSecondName` varchar(25) NOT NULL DEFAULT '',
+  `paintingCreationYear` int(4) unsigned NOT NULL,
+  `paintingMedium` varchar(60) NOT NULL DEFAULT '',
+  `paintingImageLink` varchar(500) NOT NULL DEFAULT '',
+  `paintingDescription` varchar(1000) NOT NULL DEFAULT '',
+  `paintingCreationYearIsEstimate` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `paintingHeight` float unsigned NOT NULL,
+  `paintingWidth` float unsigned NOT NULL,
+  `metAssetLink` varchar(500) NOT NULL DEFAULT '',
+  `isHidden` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-LOCK TABLES `Paintings` WRITE;
-/*!40000 ALTER TABLE `Paintings` DISABLE KEYS */;
+LOCK TABLES `paintings` WRITE;
+/*!40000 ALTER TABLE `paintings` DISABLE KEYS */;
 
-INSERT INTO `Paintings` (`id`, `paintingName`, `authorFirstName`, `authorSecondName`, `paintingCreationYear`, `paintingMedium`, `paintingImageLink`, `paintingDescription`, `paintingCreationYearIsEstimate`, `paintingHeight`, `paintingWidth`, `metAssetLink`, `isHidden`)
+INSERT INTO `paintings` (`id`, `paintingName`, `authorFirstName`, `authorSecondName`, `paintingCreationYear`, `paintingMedium`, `paintingImageLink`, `paintingDescription`, `paintingCreationYearIsEstimate`, `paintingHeight`, `paintingWidth`, `metAssetLink`, `isHidden`)
 VALUES
 	(2,'Still life with Peaches','Auguste','Renoir',1881,'Oil on Canvas','assets/renoir-peaches.jpg','Reviewers of the 1882 Impressionist exhibition were dazzled by this \"very appealing\" still life of \"a certain fruit bowl of \'Peaches,\' whose velvety execution verges on a trompe l\'oeil.\" Painted the previous summer at the country house of Renoir?s patron Paul Berard, it is one of two still lifes that feature the same faïence jardinière.',0,21,25.5,'https://www.metmuseum.org/art/collection/search/437429?searchField=All&amp;sortBy=Relevance&amp;showOnly=openAccess&amp;ft=impressionist&amp;offset=0&amp;rpp=20&amp;pos=18',0),
 	(3,'A Farm in Brittany','Paul','Gauguin',1894,'Oil on Canvas','assets/gauguin-farm.jpg','From early in his career Gauguin was attracted to the relatively remote and unspoiled terrain of Brittany in northwestern France. Breton culture, infused with vestiges of its pagan Celtic past, appealed to his taste for the primitive and the exotic. The artist is thought to have made this work during his fifth and final visit to the region in 1894, between voyages to the tropics.',1,28.5,35.63,'https://www.metmuseum.org/art/collection/search/436448?searchField=All&amp;sortBy=Relevance&amp;showOnly=openAccess&amp;ft=impressionist&amp;offset=40&amp;rpp=20&amp;pos=52',0),
@@ -59,41 +59,7 @@ VALUES
 	(11,'Gardanne','Paul ','C&eacute;zanne',1885,'Oil on Canvas','assets/cezanne-gardanne.jpg','This is one of three views of Gardanne, a hill town near Aix-en-Provence where Cézanne worked from the summer of 1885 through the spring of 1886. The steeple of the local church crowns the cluster of red-roofed buildings which animate the sloping terrain. Faceted and geometric, the structures anticipate early-twentieth-century Cubism.',1,31.5,25.25,'https://www.metmuseum.org/art/collection/search/435871',1),
 	(12,'Dish of Apples','Paul ','C&eacute;zanne',1876,'Oil on Canvas','assets/cezanne-apples.jpg','This rich and dense still life, featuring a napkin shaped like Mont Sainte-Victoire, was painted about 1876?77 in the house of Cézanne\'s father in Aix. The decorative screen visible in the background was long thought to have been made by the artist in his youth.',1,18.13,21.75,'https://www.metmuseum.org/art/collection/search/437989',1);
 
-/*!40000 ALTER TABLE `Paintings` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table PaintingsTest
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `PaintingsTest`;
-
-CREATE TABLE `PaintingsTest` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `paintingName` varchar(150) DEFAULT NULL,
-  `authorFirstName` varchar(25) DEFAULT NULL,
-  `authorSecondName` varchar(25) DEFAULT NULL,
-  `paintingCreationYear` int(4) unsigned DEFAULT NULL,
-  `paintingMedium` varchar(60) DEFAULT NULL,
-  `paintingImageLink` varchar(500) DEFAULT NULL,
-  `paintingDescription` varchar(1000) DEFAULT NULL,
-  `paintingCreationYearIsEstimate` tinyint(1) unsigned DEFAULT NULL,
-  `paintingHeight` float unsigned DEFAULT NULL,
-  `paintingWidth` float unsigned DEFAULT NULL,
-  `metAssetLink` varchar(500) DEFAULT NULL,
-  `isHidden` tinyint(1) unsigned DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-LOCK TABLES `PaintingsTest` WRITE;
-/*!40000 ALTER TABLE `PaintingsTest` DISABLE KEYS */;
-
-INSERT INTO `PaintingsTest` (`id`, `paintingName`, `authorFirstName`, `authorSecondName`, `paintingCreationYear`, `paintingMedium`, `paintingImageLink`, `paintingDescription`, `paintingCreationYearIsEstimate`, `paintingHeight`, `paintingWidth`, `metAssetLink`, `isHidden`)
-VALUES
-	(2,'Still life with Peaches','Auguste','Renoir',1881,'Oil on Canvas','assets/renoir-peaches.jpg','Reviewers of the 1882 Impressionist exhibition were dazzled by this \"very appealing\" still life of \"a certain fruit bowl of \'Peaches,\' whose velvety execution verges on a trompe l\'oeil.\" Painted the previous summer at the country house of Renoir?s patron Paul Berard, it is one of two still lifes that feature the same faïence jardinière.',0,21,25.5,'https://www.metmuseum.org/art/collection/search/437429?searchField=All&amp;sortBy=Relevance&amp;showOnly=openAccess&amp;ft=impressionist&amp;offset=0&amp;rpp=20&amp;pos=18',0),
-	(3,'A Farm in Brittany','Paul','Gauguin',1894,'Oil on Canvas','assets/gauguin-farm.jpg','From early in his career Gauguin was attracted to the relatively remote and unspoiled terrain of Brittany in northwestern France. Breton culture, infused with vestiges of its pagan Celtic past, appealed to his taste for the primitive and the exotic. The artist is thought to have made this work during his fifth and final visit to the region in 1894, between voyages to the tropics.',1,28.5,35.63,'https://www.metmuseum.org/art/collection/search/436448?searchField=All&amp;sortBy=Relevance&amp;showOnly=openAccess&amp;ft=impressionist&amp;offset=40&amp;rpp=20&amp;pos=52',0);
-
-/*!40000 ALTER TABLE `PaintingsTest` ENABLE KEYS */;
+/*!40000 ALTER TABLE `paintings` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
