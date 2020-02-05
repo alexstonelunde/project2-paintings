@@ -20,8 +20,10 @@ $paintings = $query->fetchAll();
     <title>
         A collection of impressionist paintings from the Met that I like.
     </title>
+
     <link rel = "stylesheet" type = "text/css" href = "css/normalize.css" />
     <link rel = "stylesheet" type = "text/css" href = "css/styles.css" />
+
 </head>
 
 <body>
@@ -33,7 +35,7 @@ $paintings = $query->fetchAll();
 
         <div class="navElementTitle">
             <div class="navElementItem">
-                A selection of impressionist paintings from the NY MOMA
+                A selection of impressionist paintings from the NY Met
             </div>
         </div>
 

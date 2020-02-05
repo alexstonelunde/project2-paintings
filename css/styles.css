@@ -28,7 +28,8 @@ nav, .main {
 img {
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 25px;
 }
 
 .navContainer, .contentContainer {
@@ -168,9 +169,13 @@ img {
         width: 350px;
     }
 
-    .contentElementPicture2 {
+    .contentElementPicture {
         height: 350px;
         width: 350px;
+    }
+
+    .contentElementText {
+        height: fit-content;
     }
 
     .contentElement {
