@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Draws elements sequentially in formatted HTML.
+ *
+ * @param array $paintings --> an array of elements from our MySQL DB.
+ *
+ * @return string --> a string with the HTML to be interpreted by the browser.
+ */
 function drawContentElement(array $paintings): string
 {
     $displayCode = '';
