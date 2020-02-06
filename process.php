@@ -3,6 +3,14 @@
 require('functions.php');
 require('dbconnect.php');
 
-//function grabAndValidate {};
+$db = dbConnection();
+
+$newPainting = grabAndValidate($_POST);
+
+
+writeToDB($newPainting, $db);
+
+header('Location: index.php');
+
 ?>
 

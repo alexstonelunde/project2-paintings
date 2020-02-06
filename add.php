@@ -25,13 +25,13 @@ require('functions.php');
 
         <div class="navElementTitle">
             <div class="navElementItem">
-                A selection of impressionist paintings from the NY Met
+                A selection of paintings from the New York Met
             </div>
         </div>
 
         <div class="navElement">
             <div class="navElementItem">
-                <a href=""> VIEW COLLECTION </a>
+                <a href="index.php"> VIEW COLLECTION </a>
             </div>
         </div>
 
@@ -91,13 +91,13 @@ require('functions.php');
                     </div>
 
                     <div class="inputRow">
-                        <span>Date painted:</span>
+                        <span>Year painted:</span>
                         <input type="text" name="date" size="4" />
                     </div>
 
                     <div class="inputRow">
-                        <span>Is the date an estimate?</span>
-                        <input type="checkbox" name="isEstimate" />
+                        <span>Path to image file</span>
+                        <input type="text" name="path" />
                     </div>
 
                     <div class="submitRow">

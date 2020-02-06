@@ -91,6 +91,87 @@ class FunctionTests extends TestCase
         $this->assertEquals($expected, $case);
 
     }
+
+    public function testValidateStringInputSuccess() {
+        $input = "hello";
+        $expected = "hello";
+
+        $case = validateStringInput($input);
+
+        $this->assertEquals($expected, $case);
+    }
+
+    public function testValidateStringInputFailure() {
+        $input = "hello234832048320493284023483204923840";
+        $expected = "ERROR!!";
+
+        $case = validateStringInput($input);
+
+        $this->assertEquals($expected, $case);
+    }
+
+    public function testValidateStringInputMalformed() {
+        $input = array("Hello");
+        $expected = "EXCEPTION";
+
+        $case = validateStringInput($input);
+
+        $this->assertEquals($expected, $case);
+    }
+
+    public function testValidateNumInputSuccess() {
+        $input = 233;
+        $expected = 233;
+
+        $case = validateNumInput($input);
+
+        $this->assertEquals($expected, $case);
+    }
+
+    public function testValidateNumInputFailure() {
+        $input = -5;
+        $expected = 'ERROR!!';
+
+        $case = validateNumInput($input);
+
+        $this->assertEquals($expected, $case);
+    }
+
+    public function testValidateNumInputMalformed() {
+        $input = "hello";
+        $expected = 'ERROR!!';
+
+        $case = validateNumInput($input);
+
+        $this->assertEquals($expected, $case);
+    }
+
+    public function testValidatePathInputSuccess() {
+        $input = "image.jpg";
+        $expected = "image.jpg";
+
+        $case = validatePath($input);
+
+        $this->assertEquals($expected, $case);
+    }
+
+    public function testValidatePathFailure() {
+        $input = "ereworiewuroewruweoruieworewuroeiwruewioruewireuiwo";
+        $expected = "ERROR!!";
+
+        $case = validatePath($input);
+
+        $this->assertEquals($expected, $case);
+    }
+
+    public function testValidatePathMalformed() {
+        $input = array(9);
+        $expected = 'EXCEPTION';
+
+        $case = validatePath($input);
+
+        $this->assertEquals($expected, $case);
+    }
 }
 
 ?>

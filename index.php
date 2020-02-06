@@ -32,19 +32,19 @@ $contents = drawContentElement($paintings);
 
         <div class="navElementTitle">
             <div class="navElementItem">
-                A selection of impressionist paintings from the New York Met
+                A selection of paintings from the New York Met
             </div>
         </div>
 
         <div class="navElement">
             <div class="navElementItem">
-                <a href=""> VIEW COLLECTION </a>
+                VIEW COLLECTION
             </div>
         </div>
 
         <div class="navElement2">
             <div class="navElementItem">
-
+                <a href="add.php"> ADD TO DATABASE </a>
             </div>
         </div>
 
