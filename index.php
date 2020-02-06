@@ -44,7 +44,7 @@ $contents = drawContentElement($paintings);
 
         <div class="navElement2">
             <div class="navElementItem">
-                
+
             </div>
         </div>
 
