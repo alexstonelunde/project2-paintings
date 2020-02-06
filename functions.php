@@ -3,9 +3,9 @@
 /**
  * Draws elements sequentially in formatted HTML.
  *
- * @param array $paintings --> an array of elements from our MySQL DB.
+ * @param array $paintings --> an array of elements.
  *
- * @return string --> a string with the HTML to be interpreted by the browser.
+ * @return string --> the HTML to be interpreted by the browser.
  */
 function drawContentElement(array $paintings): string
 {
