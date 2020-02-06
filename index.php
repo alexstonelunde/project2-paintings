@@ -3,14 +3,9 @@
 require('dbconnect.php');
 require('functions.php');
 
-$db = dbConnection($dbName, $dbUser, $dbPass);
+$db = dbConnection();
 
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-
-$query = $db->prepare("SELECT `paintingName`, `authorFirstName`, `authorSecondName`, `paintingCreationYear`, `paintingCreationYearIsEstimate`, `paintingMedium`, `paintingImageLink`, `paintingHeight`, `paintingWidth`, `isHidden` FROM `paintings`;");
-$query->execute();
-
-$paintings = $query->fetchAll();
+$paintings = queryDB($db);
 
 $contents = drawContentElement($paintings);
 
@@ -22,7 +17,7 @@ $contents = drawContentElement($paintings);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
-        A collection of impressionist paintings from the Met that I like.
+        Collections project
     </title>
 
     <link rel = "stylesheet" type = "text/css" href = "css/normalize.css" />

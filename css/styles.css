@@ -227,7 +227,8 @@ img {
     }
 
     .contentElementText {
-        height: fit-content;
+        height: min-content;
+        padding-bottom: 10px;
     }
 
     .contentElement {

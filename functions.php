@@ -61,16 +61,20 @@ function drawContentElement(array $paintings): string
     return $displayCode;
 }
 
+
+
 /**
- * Takes database name and login credentials and creates a db connection
- * @param string $dbname -> The DB name
- * @param string $user
- * @param string $pass
- * @return PDO -> The PDO connection object to be used elsewhere.
+ * Takes a db connection object and applies an SQL statement to it.
+ * @param PDO $db
+ * @return array -> an array with the data returned from the db
  */
-function dbConnection(string $dbname, string $user, string $pass): PDO {
-    $db = new PDO("mysql:host=db; dbname=$dbname",$user, $pass);
-    return $db;
+function queryDB(PDO $db): array {
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+    $query = $db->prepare("SELECT `paintingName`, `authorFirstName`, `authorSecondName`, `paintingCreationYear`, `paintingCreationYearIsEstimate`, `paintingMedium`, `paintingImageLink`, `paintingHeight`, `paintingWidth`, `isHidden` FROM `paintings`;");
+    $query->execute();
+
+    return $query->fetchAll();
 }
 
 ?>
