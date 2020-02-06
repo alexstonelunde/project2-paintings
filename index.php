@@ -1,14 +1,18 @@
 <?php
 
+require('dbconnect.php');
 require('functions.php');
 
-$db = new PDO('mysql:host=db; dbname=project2-paintings', 'root', 'password');
+$db = dbConnection($dbName, $dbUser, $dbPass);
+
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 $query = $db->prepare("SELECT `paintingName`, `authorFirstName`, `authorSecondName`, `paintingCreationYear`, `paintingCreationYearIsEstimate`, `paintingMedium`, `paintingImageLink`, `paintingHeight`, `paintingWidth`, `isHidden` FROM `paintings`;");
 $query->execute();
 
 $paintings = $query->fetchAll();
+
+$contents = drawContentElement($paintings);
 
 ?>
 
@@ -30,8 +34,6 @@ $paintings = $query->fetchAll();
 
 <nav>
     <div class="navContainer">
-        <div class="navSpacer">
-        </div>
 
         <div class="navElementTitle">
             <div class="navElementItem">
@@ -45,14 +47,12 @@ $paintings = $query->fetchAll();
             </div>
         </div>
 
-        <div class="navElement">
+        <div class="navElement2">
             <div class="navElementItem">
-                <a href=""> ADD ITEM TO GALLERY </a>
+                ADD ITEM TO GALLERY
             </div>
         </div>
 
-        <div class="navSpacer">
-        </div>
     </div>
 </nav>
 
@@ -61,7 +61,6 @@ $paintings = $query->fetchAll();
     <div class="contentContainer">
 
         <?php
-        $contents = drawContentElement($paintings);
         echo $contents;
         ?>
 

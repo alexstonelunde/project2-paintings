@@ -45,25 +45,9 @@ class FunctionTests extends TestCase
 
     public function testDrawContentElementMalformed()
     {
-        $input = array(
-            array(
-                "paintingName" => "hello"
-            ),
-            array(
-                "paintingName"=> "A Farm in Brittany",
-                "authorFirstName" => "Paul",
-                "authorSecondName" => "Gauguin",
-                "paintingCreationYear" => 232,
-                "paintingCreationYearIsEstimate" => "1",
-                "paintingMedium" => "Oil on Canvas",
-                "paintingImageLink" => "assets/gauguin-farm.jpg",
-                "paintingHeight" => "28.5",
-                "paintingWidth" => "35.63",
-                "isHidden" => "0"
-            )
-        );
+        $input = "hello";
 
-        $expected = 'MISSING ONE OR MORE FIELDS!';
+        $expected = "TypeError: Argument 1 passed to drawContentElement() must be of the type array, string given, called in /sites/academyServer/html/week5/project-collection/tests/functions.php on line 52";
 
         $case = drawContentElement($input);
 

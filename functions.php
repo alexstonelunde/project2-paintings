@@ -61,4 +61,16 @@ function drawContentElement(array $paintings): string
     return $displayCode;
 }
 
+/**
+ * Takes database name and login credentials and creates a db connection
+ * @param string $dbname -> The DB name
+ * @param string $user
+ * @param string $pass
+ * @return PDO -> The PDO connection object to be used elsewhere.
+ */
+function dbConnection(string $dbname, string $user, string $pass): PDO {
+    $db = new PDO("mysql:host=db; dbname=$dbname",$user, $pass);
+    return $db;
+}
+
 ?>
