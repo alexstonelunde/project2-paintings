@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Baskerville, serif;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+nav, .main {
+    width: 1500px;
+    overflow: auto;
+    margin: 0 auto;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50px/20px;
+
+    box-shadow:
+            0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+            0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+            0 12.5px 10px rgba(0, 0, 0, 0.06),
+            0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+            0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+            0 100px 80px rgba(0, 0, 0, 0.12)
+    ;
+
+    padding: 3%;
+
+    background-image: url("../assets/eosertia2d.png");
+}
+
+.contentContainer {
+    float: left;
+    overflow: auto;
+    width: 100%;
+}
+
+.navContainer {
+    margin: 0 auto;
+    margin-bottom: 15px;
+    overflow: auto;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.navElementTitle, .navElement, .navElement2 {
+    float: left;
+    background-color: gainsboro;
+    height: 60px;
+}
+
+.navElementTitle {
+    width: 60%;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.navElement, .navElement2 {
+    width: 20%;
+}
+
+
+.navElementItem {
+    width: 100%;
+    text-align: center;
+    padding-top: 13px;
+}
+
+.contentElement {
+    width: 33.333%;
+    float: left;
+    overflow: auto;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    border-bottom: 3px solid dimgray;
+}
+
+.contentElementPicture {
+    width: 500px;
+    height: 400px;
+    padding: 0 15px;
+}
+
+.contentElementText {
+    float: left;
+    width: 100%;
+    height: 160px;
+    margin-top: 15px;
+    padding: 8px 35px 20px 35px;
+    background-image: linear-gradient(lemonchiffon, white);
+    border-top: 1px dotted rosybrown;
+}
+
+.textTitle {
+    text-align: center;
+    padding: 10px 25px 0 25px;
+}
+
+.contentElement .category {
+    font-weight: bold;
+}
+
+.contentElement .author {
+    font-style: italic;
+}
+
+.formContainer {
+    float: left;
+    overflow: auto;
+    width: 100%;
+}
+
+.formElement {
+    width: 40%;
+    float: left;
+    overflow: auto;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 80px;
+    border-bottom: 3px solid dimgray;
+
+    border-radius: 50px/20px;
+
+    box-shadow:
+            0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+            0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+            0 12.5px 10px rgba(0, 0, 0, 0.06),
+            0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+            0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+            0 50px 40px rgba(0, 0, 0, 0.12)
+;
+
+    padding: 1%;
+
+    background-image: url("../assets/eosertia2d.png");
+}
+
+.formElementMain {
+    width: 94%;
+    height: 600px;
+    padding: 0 15px;
+    background-image: linear-gradient(lemonchiffon, white);
+    margin: 3%;
+}
+
+
+@media screen and (max-width: 1490px) {
+
+    nav, .main {
+        width: 1000px;
+    }
+
+    .navContainer {
+        width: 75%;
+        margin-left: 12.5%;
+        margin-right: 12.5%;
+    }
+
+    .contentElement {
+        width: 50%;
+    }
+
+}
+
+@media screen and (max-width: 990px) {
+
+    nav, .main {
+        width: 500px;
+    }
+
+    .contentElement {
+        width: 100%;
+    }
+
+    .navContainer {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .navElement, .navElement2 {
+        width: 50%;
+    }
+
+    .navElementItem {
+        padding-top: 8px;
+    }
+
+    .navElementTitle {
+        width: 100%;
+    }
+
+    .navElementTitle, .navElement, .navElement2 {
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+
+    body {
+        font-size: 14px;
+    }
+    nav, .main {
+        width: 350px;
+    }
+
+    .contentElementPicture {
+        height: 300px;
+        width: 350px;
+    }
+
+    .contentElementText {
+        height: min-content;
+        padding-bottom: 10px;
+    }
+
+    .contentElement {
+        width: 100%;
+    }
+
+    .navSpacer {
+        display: none;
+    }
+
+    .navElement, .navElement2 {
+        width: 50%;
+    }
+
+    .navElementItem {
+        padding-top: 8px;
+    }
+
+    .navElementTitle {
+        width: 100%;
+        padding: 0 15px;
+        height: 40px;
+    }
+
+    .navElement, .navElement2 {
+        height: 30px;
+    }
+}
