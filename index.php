@@ -32,7 +32,7 @@ $contents = drawContentElement($paintings);
 
         <div class="navElementTitle">
             <div class="navElementItem">
-                A selection of impressionist paintings from the NY Met
+                A selection of impressionist paintings from the New York Met
             </div>
         </div>
 
@@ -44,7 +44,7 @@ $contents = drawContentElement($paintings);
 
         <div class="navElement2">
             <div class="navElementItem">
-                ADD ITEM TO GALLERY
+                
             </div>
         </div>
 
