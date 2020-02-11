@@ -77,4 +77,125 @@ function queryDB(PDO $db): array {
     return $query->fetchAll();
 }
 
+/**
+ * Gets POST data from form, performs validation and outputs an array.
+ * @param array $paintingInput
+ * @return array with form field data
+ */
+function grabAndValidate(array $paintingInput): array {
+    $paintingInput['paintingName'] = $_POST['paintingName'];
+    $paintingInput['authorFirstName'] = $_POST['authorFirst'];
+    $paintingInput['authorSecondName'] = $_POST['authorSecond'];
+    $paintingInput['medium'] = $_POST['medium'];
+    $paintingInput['height'] = $_POST['height'];
+    $paintingInput['width'] = $_POST['width'];
+    $paintingInput['date'] = $_POST['date'];
+    $paintingInput['path'] = $_POST['path'];
+
+    foreach($paintingInput as $painting)
+    {
+        if (key($paintingInput) == 'paintingName' || key($paintingInput) == 'authorFirstName' || key($paintingInput) == 'medium' || key($paintingInput) == 'authorSecondName')
+        {
+            validateStringInput($painting);
+        }
+        if (key($paintingInput) == 'height' || key($paintingInput) == 'width' || key($paintingInput) == 'date') {
+            validateNumInput($painting);
+        }
+
+        if (key($paintingInput) == 'path') {
+            validatePath($painting);
+        }
+    }
+
+    return $paintingInput;
+}
+
+
+/**
+ * validates string input
+ * @param string $input
+ * @return string (sanitised and validated)
+ */
+function validateStringInput(string $input): string {
+    if(strlen($input) >= 0 && strlen($input) <= 25) {
+
+        $input = trim($input);
+        $input = stripslashes($input);
+        $input = htmlspecialchars($input);
+
+        return $input;
+    } else {
+        return 'ERROR!!';
+    }
+}
+
+/**
+ * validates numerical input
+ * @param $input
+ * @return string as number, validated and sanitised
+ */
+function validateNumInput($input) {
+    if(strlen($input) >= 0 && strlen($input) <= 4) {
+
+        $input = trim($input);
+        $input = stripslashes($input);
+        $input = htmlspecialchars($input);
+
+        $isValid = ('.');
+
+        if (!ctype_digit(str_replace($isValid, '', $input))) {
+            return 'ERROR!!';
+        }
+        else return $input;
+    } else {
+        return 'ERROR!!';
+    }
+}
+
+/**
+ * validates path field from form input
+ * @param $input
+ * @return string, validated and sanitised
+ */
+function validatePath(string $input): string {
+    if(strlen($input) >= 0 && strlen($input) <= 30) {
+
+        $input = trim($input);
+        $input = htmlspecialchars($input);
+
+        $isValid = '.';
+        $isValid2 = "/";
+
+        if (!ctype_alnum(str_replace($isValid, '', $input)) && !ctype_alnum(str_replace($isValid2, '', $input))) {
+            return 'ERROR!!';
+        }
+        else return $input;
+    } else {
+        return 'ERROR!!';
+    }
+}
+
+/**
+ * writes data from array create from form input to a database object
+ * @param array $newPainting
+ * @param PDO $db
+ */
+function writeToDB(array $newPainting, PDO $db)
+{
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+    $query = $db->prepare("INSERT INTO `paintings`(`paintingName`, `authorFirstName`, `authorSecondName`, `paintingCreationYear`, `paintingMedium`, `paintingImageLink`, `paintingHeight`, `paintingWidth`) VALUES (:pname, :firstName, :secondName, :pyear, :pmedium, :pimage, :pheight, :pwidth);");
+
+    $query->bindParam(':pname', $newPainting['paintingName']);
+    $query->bindParam(':firstName', $newPainting['authorFirstName']);
+    $query->bindParam(':secondName', $newPainting['authorSecondName']);
+    $query->bindParam(':pyear', $newPainting['date']);
+    $query->bindParam(':pmedium', $newPainting['medium']);
+    $query->bindParam(':pimage', $newPainting['path']);
+    $query->bindParam(':pheight', $newPainting['height']);
+    $query->bindParam(':pwidth', $newPainting['width']);
+
+    $query->execute();
+}
+
 ?>
